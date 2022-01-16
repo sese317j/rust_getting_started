@@ -1,11 +1,11 @@
+mod print;
+mod vars;
+mod types;
+
 fn main() {
 
-    let zahl = 10;
+    //print::run();
+    //vars::run();
+    types::run();
 
-    for int in 0..zahl {
-        println!("Hello, world! {}", int);
-    }
-
-
-    println!("Hello, world Neu! {}", zahl);
 }
