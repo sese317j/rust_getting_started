@@ -25,6 +25,10 @@ pub fn run(){
     //Find max size
     println!("Max i32:{}", i32::MAX);
     println!("Max i64:{}", i64::MAX);
+    println!("Min u8:{}", u8::MIN);
+    println!("May u8:{}", u8::MAX);
+    println!("Min i8:{}", i8::MIN);
+    println!("May i8:{}", i8::MAX);
 
     //Boolean
     let is_active = true;
