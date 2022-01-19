@@ -6,7 +6,7 @@ pub fn run() {
     let mut numbers: [i32; 5] = [1,2,3,4,5];
 
     //Array of arrays (nice)
-    let numbers2: [[i32;2]; 5] = [[1,2],[1,2],[1,2],[1,2],[1,2]];
+    let numbers2: [[i32;1]; 5] = [[1],[2],[3],[4],[5]];
 
     //Re-assign value
     numbers[2] = 20;
@@ -22,7 +22,10 @@ pub fn run() {
     //Arrays are stack allocated
     println!("Array occupies {} bytes",mem::size_of_val(&numbers));
 
-    //Get Sclice
+    //size of array of arrays
+    println!("Array2 occupies {} bytes",mem::size_of_val(&numbers2));
+
+    //Get Slice
     let slice: &[i32] = &numbers[0..2];
     println!("Slice:{:?}",slice);
 
