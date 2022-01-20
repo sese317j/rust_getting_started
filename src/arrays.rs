@@ -25,11 +25,30 @@ pub fn run() {
     //size of array of arrays
     println!("Array2 occupies {} bytes",mem::size_of_val(&numbers2));
 
+
     //Get Slice
     let slice: &[i32] = &numbers[0..2];
-    println!("Slice:{:?}",slice);
+    let slice2: &[i32] = &numbers[0..3];
+    println!("Slice:{:?}", slice);
+    println!("Slice2:{:?}", slice2);
 
-    //How to "unborrow ? " TODO: find out how borrowing works
-    //numbers[0] = 16;
-    //println!("Slice:{:?}",slice);
+
+    let slice: &[i32] = &numbers[0..2]; //immutable reference = copy
+    println!("Slice:{:?}", slice);
+    numbers[0] = 12;
+    /*
+    println!("Slice:{:?}", slice); -> Would not work because slice is only a copy, if after the copy is taken the original is changed
+    the copy wont be altered, the borrow checker knows this and wont compile.
+    */
+
+
+    //Get mutable Slice, change something
+    let slice: &mut [i32] = &mut numbers[0..3];
+    println!("Mutable Slice before:{:?}", slice);
+    slice[2]=33;
+    println!("Mutable Slice after:{:?}", slice);
+
+
+    //the original array also changes:
+    println!("Numbers:{:?}",numbers);
 }
